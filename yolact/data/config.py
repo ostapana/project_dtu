@@ -172,153 +172,17 @@ pascal_sbd_dataset = dataset_base.copy({
     'class_names': PASCAL_CLASSES,
 })
 
-### CROW
-kuka_env_pybullet_dataset = dataset_base.copy({
-    'name': 'KukaEnvPyBullet Dataset',
-
-    'train_images': './data/yolact/datasets/dataset_kuka_env_pybullet_fixedcolor/train/', #/yolact
-    'train_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_fixedcolor/train/annotations.json",
-
-    'valid_images': './data/yolact/datasets/dataset_kuka_env_pybullet_fixedcolor/test/',
-    'valid_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_fixedcolor/test/annotations.json",
-
+my_custom_dataset = dataset_base.copy({
+    'name': 'my_custom_dataset',
+ 
+    'train_images': '/home/s206678/Documents/Github/project/yolact/data/datasets/boxes',
+    'train_info':   '/home/s206678/Documents/Github/project/yolact/data/datasets/boxes/boxes.json',
+ 
+    'valid_images': '/home/s206678/Documents/Github/project/yolact/data/datasets/box_validation',
+    'valid_info':   '/home/s206678/Documents/Github/project/yolact/data/datasets/box_validation/box_validation.json',
+ 
     'has_gt': True,
-
-    # Derived from the used_class_names in generate_coco_dataset.py. Here, each category_id has its unique class_name,
-    # i.e. "screw_short", "screw_long" and "sroub", all of the category_id=6, are called "screw"
-    # The order of names in class_names match the internal numbering of classees used by yolact, starting from 1 - chosen so that it matches the category_id in generate_coco_dataset
-    #OLD classes:'class_names': ("kuka", "cube_holes", "hammer", "wrench", "nut", "screw", "screwdriver", "wheel", "wood_3", "wood_4", "wood_round")
-    'class_names': ("kuka", "car_roof", "cube_holes", "ex_bucket", "hammer", "nut", "peg_screw", "pliers", "screw_round", "screwdriver", "sphere_holes","wafer", "wheel", "wrench")
-})
-###### CROW TEST DATASETS do not use for training
-# separated for each camera
-kuka_env_pybullet_dataset_test_cam0 = dataset_base.copy({
-    'name': 'KukaEnvPyBullet Test Dataset cam0',
-
-    'train_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam0/train/', #/yolact
-    'train_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam0/train/annotations.json",
-
-    'valid_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam0/test/',
-    'valid_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam0/test/annotations.json",
-
-    'has_gt': True,
-
-    # Derived from the used_class_names in generate_coco_dataset.py. Here, each category_id has its unique class_name,
-    # i.e. "screw_short", "screw_long" and "sroub", all of the category_id=6, are called "screw"
-    # The order of names in class_names match the internal numbering of classees used by yolact, starting from 1 - chosen so that it matches the category_id in generate_coco_dataset
-    'class_names': ("kuka", "cube_holes", "hammer", "wrench", "nut", "screw", "screwdriver", "wheel", "wood_3", "wood_4", "wood_round")
-})
-kuka_env_pybullet_dataset_test_cam1 = dataset_base.copy({
-    'name': 'KukaEnvPyBullet Test Dataset cam1',
-
-    'train_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam1/train/', #/yolact
-    'train_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam1/train/annotations.json",
-
-    'valid_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam1/test/',
-    'valid_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam1/test/annotations.json",
-
-    'has_gt': True,
-
-    # Derived from the used_class_names in generate_coco_dataset.py. Here, each category_id has its unique class_name,
-    # i.e. "screw_short", "screw_long" and "sroub", all of the category_id=6, are called "screw"
-    # The order of names in class_names match the internal numbering of classees used by yolact, starting from 1 - chosen so that it matches the category_id in generate_coco_dataset
-    'class_names': ("kuka", "cube_holes", "hammer", "wrench", "nut", "screw", "screwdriver", "wheel", "wood_3", "wood_4", "wood_round")
-})
-kuka_env_pybullet_dataset_test_cam2 = dataset_base.copy({
-    'name': 'KukaEnvPyBullet Test Dataset cam2',
-
-    'train_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam2/train/', #/yolact
-    'train_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam2/train/annotations.json",
-
-    'valid_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam2/test/',
-    'valid_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam2/test/annotations.json",
-
-    'has_gt': True,
-
-    # Derived from the used_class_names in generate_coco_dataset.py. Here, each category_id has its unique class_name,
-    # i.e. "screw_short", "screw_long" and "sroub", all of the category_id=6, are called "screw"
-    # The order of names in class_names match the internal numbering of classees used by yolact, starting from 1 - chosen so that it matches the category_id in generate_coco_dataset
-    'class_names': ("kuka", "cube_holes", "hammer", "wrench", "nut", "screw", "screwdriver", "wheel", "wood_3", "wood_4", "wood_round")
-})
-kuka_env_pybullet_dataset_test_cam3 = dataset_base.copy({
-    'name': 'KukaEnvPyBullet Test Dataset cam3',
-
-    'train_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam3/train/', #/yolact
-    'train_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam3/train/annotations.json",
-
-    'valid_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam3/test/',
-    'valid_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam3/test/annotations.json",
-
-    'has_gt': True,
-
-    # Derived from the used_class_names in generate_coco_dataset.py. Here, each category_id has its unique class_name,
-    # i.e. "screw_short", "screw_long" and "sroub", all of the category_id=6, are called "screw"
-    # The order of names in class_names match the internal numbering of classees used by yolact, starting from 1 - chosen so that it matches the category_id in generate_coco_dataset
-    'class_names': ("kuka", "cube_holes", "hammer", "wrench", "nut", "screw", "screwdriver", "wheel", "wood_3", "wood_4", "wood_round")
-})
-kuka_env_pybullet_dataset_test_cam4 = dataset_base.copy({
-    'name': 'KukaEnvPyBullet Test Dataset cam4',
-
-    'train_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam4/train/', #/yolact
-    'train_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam4/train/annotations.json",
-
-    'valid_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam4/test/',
-    'valid_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam4/test/annotations.json",
-
-    'has_gt': True,
-
-    # Derived from the used_class_names in generate_coco_dataset.py. Here, each category_id has its unique class_name,
-    # i.e. "screw_short", "screw_long" and "sroub", all of the category_id=6, are called "screw"
-    # The order of names in class_names match the internal numbering of classees used by yolact, starting from 1 - chosen so that it matches the category_id in generate_coco_dataset
-    'class_names': ("kuka", "cube_holes", "hammer", "wrench", "nut", "screw", "screwdriver", "wheel", "wood_3", "wood_4", "wood_round")
-})
-kuka_env_pybullet_dataset_test_cam5 = dataset_base.copy({
-    'name': 'KukaEnvPyBullet Test Dataset cam5',
-
-    'train_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam5/train/', #/yolact
-    'train_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam5/train/annotations.json",
-
-    'valid_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam5/test/',
-    'valid_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam5/test/annotations.json",
-
-    'has_gt': True,
-
-    # Derived from the used_class_names in generate_coco_dataset.py. Here, each category_id has its unique class_name,
-    # i.e. "screw_short", "screw_long" and "sroub", all of the category_id=6, are called "screw"
-    # The order of names in class_names match the internal numbering of classees used by yolact, starting from 1 - chosen so that it matches the category_id in generate_coco_dataset
-    'class_names': ("kuka", "cube_holes", "hammer", "wrench", "nut", "screw", "screwdriver", "wheel", "wood_3", "wood_4", "wood_round")
-})
-kuka_env_pybullet_dataset_test_cam6 = dataset_base.copy({
-    'name': 'KukaEnvPyBullet Test Dataset cam6',
-
-    'train_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam6/train/', #/yolact
-    'train_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam6/train/annotations.json",
-
-    'valid_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam6/test/',
-    'valid_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam6/test/annotations.json",
-
-    'has_gt': True,
-
-    # Derived from the used_class_names in generate_coco_dataset.py. Here, each category_id has its unique class_name,
-    # i.e. "screw_short", "screw_long" and "sroub", all of the category_id=6, are called "screw"
-    # The order of names in class_names match the internal numbering of classees used by yolact, starting from 1 - chosen so that it matches the category_id in generate_coco_dataset
-    'class_names': ("kuka", "cube_holes", "hammer", "wrench", "nut", "screw", "screwdriver", "wheel", "wood_3", "wood_4", "wood_round")
-})
-kuka_env_pybullet_dataset_test_cam7 = dataset_base.copy({
-    'name': 'KukaEnvPyBullet Test Dataset cam7',
-
-    'train_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam7/train/', #/yolact
-    'train_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam7/train/annotations.json",
-
-    'valid_images': './data/yolact/datasets/dataset_kuka_env_pybullet_test/cam7/test/',
-    'valid_info':   "./data/yolact/datasets/dataset_kuka_env_pybullet_test/cam7/test/annotations.json",
-
-    'has_gt': True,
-
-    # Derived from the used_class_names in generate_coco_dataset.py. Here, each category_id has its unique class_name,
-    # i.e. "screw_short", "screw_long" and "sroub", all of the category_id=6, are called "screw"
-    # The order of names in class_names match the internal numbering of classees used by yolact, starting from 1 - chosen so that it matches the category_id in generate_coco_dataset
-    'class_names': ("kuka", "cube_holes", "hammer", "wrench", "nut", "screw", "screwdriver", "wheel", "wood_3", "wood_4", "wood_round")
+    'class_names': ('box')
 })
 
 
@@ -913,6 +777,19 @@ yolact_resnet50_pascal_config = yolact_resnet50_config.copy({
     })
 })
 
+yolact_im400_custom_cfg = yolact_base_config.copy({
+    'name': 'yolact_im400',
+    # Dataset stuff
+    'dataset': my_custom_dataset,
+    'num_classes': len(my_custom_dataset.class_names) + 1,
+ 
+    'max_size': 416,
+    'backbone': yolact_base_config.backbone.copy({
+        'pred_scales': [[int(x[0] / yolact_base_config.max_size * 400)] for x in yolact_base_config.backbone.pred_scales],
+    }),
+})
+ 
+
 # ----------------------- YOLACT++ CONFIGS ----------------------- #
 
 yolact_plus_base_config = yolact_base_config.copy({
@@ -953,20 +830,20 @@ yolact_plus_resnet50_config = yolact_plus_base_config.copy({
 
 ### CROW
 PRED_SCALES_550 = [[24], [48], [96], [192], [384]] # for 550 architecture
-max_size = 640 # Yolact is internally built on 550x550, we adjust this to match our camera setting (on HW camera, or simulator) for re-scaling. (We don't want to upscale due to quality loss
+max_size = 550 # Yolact is internally built on 550x550, we adjust this to match our camera setting (on HW camera, or simulator) for re-scaling. (We don't want to upscale due to quality loss
 PRED_SCALES = [[int(x[0] / 550 * max_size)] for x in PRED_SCALES_550]
 LR_STEPS_RATIO = (0.35, 0.75, 0.875, 0.9375) # suggested by Yolact
 max_iter = 400000
 lr_steps = [int(x*max_iter) for x in LR_STEPS_RATIO]
 
-crow_base_config = yolact_base_config.copy({ #see yolact_base_config for all the params that can be changed. Add below what you want to alter.
-  'name': 'crow_base',
+custom_base_config = yolact_base_config.copy({ #see yolact_base_config for all the params that can be changed. Add below what you want to alter.
+  'name': 'custom_base',
   # Dataset stuff
-  'dataset': kuka_env_pybullet_dataset, #kuka_env_pybullet_dataset
-  'num_classes': len(kuka_env_pybullet_dataset.class_names) + 1, #kuka_env_pybullet_dataset #The +1 stands for "background" class
+  'dataset': my_custom_dataset, #kuka_env_pybullet_dataset
+  'num_classes': len(my_custom_dataset.class_names) + 1, #kuka_env_pybullet_dataset #The +1 stands for "background" class
 
   # Image Size
-  'max_size': max_size, #crow
+  'max_size': max_size,
   
   # Training params
   'max_iter': max_iter,
@@ -986,9 +863,10 @@ crow_base_config = yolact_base_config.copy({ #see yolact_base_config for all the
 })
 
 # Default config
-cfg = yolact_base_config.copy()
+#cfg = yolact_base_config.copy()
 ### CROW override
-cfg = crow_base_config.copy()
+#cfg = crow_base_config.copy()
+cfg = custom_base_config.copy()
 
 def set_cfg(config_name:str):
     """ Sets the active config. Works even if cfg is already imported! """

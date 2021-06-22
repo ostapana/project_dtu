@@ -690,8 +690,7 @@ def evalvideo(net:Yolact, path:str, out_path:str=None):
             frame = vid.read()[1]
             if frame is None:
                 return frames
-            frames.append(frame)RuntimeError: Error(s) in loading state_dict for Yolact:
-	Missing key(s) in state_dict:
+            frames.append(frame)
         return frames
 
     def transform_frame(frames):
