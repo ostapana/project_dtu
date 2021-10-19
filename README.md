@@ -9,4 +9,4 @@
 
 Results: it's hard to recognise a box! (obviously it's just a square :/ )
 
-You can read a """" paper """" [here] (https://github.com/ostapana/project_dtu/blob/main/dtu_project.pdf) (not really a paper just a description)
+You can read a """" paper """" [here] (dtu_project.pdf) (not really a paper just a description)
