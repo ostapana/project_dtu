@@ -14,7 +14,9 @@ You can read a """" paper """" [here](https://github.com/ostapana/project_dtu/bl
 Some deme video(s) related to the project
 yolact + pepper robot
 https://drive.google.com/file/d/1V6C1-0ImhXB_qzrZAXfHucO7g284KJdH/view?usp=sharing
+
 yolact + real sense camera
+
 https://drive.google.com/file/d/1P09nSn9ksFqWrcghDUfSrB4cbDKqyq_c/view?usp=sharing
 
 before training (tennis ball recognition)
